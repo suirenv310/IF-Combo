@@ -880,6 +880,26 @@ body:has(.openai-tab-buttons) {
     touch-action: manipulation;
 }
 
+.mes_button.cct-edit-translation {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    color: inherit;
+    font-size: inherit;
+}
+
+.mes_button.cct-edit-translation:focus-visible {
+    opacity: 1;
+    outline: 1px solid currentColor;
+}
+
+.cct-translation-editor-source {
+    max-height: 24vh;
+    overflow: auto;
+    text-align: left;
+    font: inherit;
+}
+
 /* Hold progress ring: fills over --cct-hold-ms, then the re-translation fires */
 .mes_button.cct-translate.cct-holding::after {
     content: '';
@@ -992,6 +1012,23 @@ body:has(.openai-tab-buttons) {
     display: block;
     opacity: 0.7;
     margin-bottom: 4px;
+}
+
+.cct-translator-context {
+    min-width: 0;
+    margin: 12px 0 6px;
+    padding: 0 8px 8px;
+    border: 1px solid var(--SmartThemeBorderColor);
+    border-radius: 6px;
+}
+
+.cct-translator-context legend {
+    padding: 0 4px;
+}
+
+.cct-translator-pronouns {
+    width: auto;
+    margin-top: 8px;
 }
 
 .cct-translator-preset-row {

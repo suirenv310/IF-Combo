@@ -21,6 +21,20 @@ IF Combo bundles practical SillyTavern interface tools in one extension:
 
 ## Installation
 
+### Translator Context build
+
+This build modifies IF Combo 1.16.0 (upstream commit `6b0c581`) with translation context and a saved-translation editor. The build uses the original extension settings and chat data.
+
+1. If IF Combo is already installed, find its `IF-Combo` folder and move it outside SillyTavern's extension folders as a backup.
+2. Extract the ZIP so `IF-Combo/manifest.json` is directly inside your extension directory. For a standard per-user installation, that directory is `SillyTavern/data/default-user/extensions/`. For a global installation, use `SillyTavern/public/scripts/extensions/third-party/`.
+3. Reload SillyTavern. Open **Extensions → IF Combo → Translator** and select a Connection Manager profile. This build has automatic extension updates disabled.
+
+**Translation context** has independent switches for previous source messages, previous translations, and lorebook entries. The first two use the same 1–30 message window (default 5) immediately before the message being translated. Previous translations are included if their recorded language matches the target language. **Matching and constant entries** uses the current message and recent messages for a keyword scan of SillyTavern's available lorebooks. **All enabled entries** skips keyword matching. Both lorebook modes and the history window have text limits. The selected translation connection receives the context you enable.
+
+Once a full message has a saved translation, click the edit icon beside the language button and choose **Save translation**. The edited display is saved with the chat, and the original message remains available via the language button. With **Include previous translations** enabled, later translations can use edited examples in the configured window. **Pronoun rules for this chat** lets you save explicit forms of address with the active chat.
+
+### Upstream release
+
 Go to **Extensions > Install extension** , then paste the following Git URL:
 ```
 https://github.com/imaginaryfriend1208-gif/IF-Combo

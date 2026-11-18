@@ -5,7 +5,7 @@
 // Global settings and constants
 const EXTENSION_NAME = 'IF Combo';
 const settingsKey = 'ChatCompletionTabs';
-const VERSION = "1.16.0";
+const VERSION = "1.16.0-context.1";
 
 // Import required functions
 import { t } from '../../../i18n.js';
@@ -23,6 +23,7 @@ import { ImageReaderManager, DEFAULT_IMAGE_READER_PROMPT } from './components/im
 import { DisabledPromptFilterManager } from './components/disabled-prompt-filter.js';
 import { PromptComboManager } from './components/prompt-combos.js';
 import { TranslatorManager, DEFAULT_TRANSLATE_PROMPT } from './components/translator.js';
+import { DEFAULT_HISTORY_COUNT } from './components/translator-context.js';
 
 /**
  * Default settings configuration
@@ -67,6 +68,12 @@ const defaultSettings = {
         targetLanguage: 'Vietnamese',
         maxTokens: 4096,
         selectionBubble: true,
+        includeChatHistory: false,
+        includePreviousTranslations: false,
+        historyCount: DEFAULT_HISTORY_COUNT,
+        includeLorebook: false,
+        lorebookMode: 'matching',
+        editTranslations: true,
         prompts: [{ id: 'default', name: 'Default', text: DEFAULT_TRANSLATE_PROMPT }],
         activePromptId: 'default'
     }
